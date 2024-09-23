@@ -51,9 +51,8 @@ fun MyScreen() {
     var nimInput by remember { mutableStateOf("") }
     var nimText by remember { mutableStateOf("") }
 
-    // State to check if form is filled
     val isFormValid = inputText.isNotEmpty() && nimInput.isNotEmpty()
-    val context = LocalContext.current // Memindahkan di sini
+    val context = LocalContext.current 
 
     Column(
         modifier = Modifier
@@ -134,7 +133,6 @@ fun MyScreen() {
                 text = inputText
                 nimText = nimInput
 
-                // Tampilkan toast dengan nama dan NIM, NIM di bawah nama
                 Toast.makeText(context, "Nama: $text\nNIM: $nimText", Toast.LENGTH_SHORT).show()
             },
             enabled = isFormValid,
